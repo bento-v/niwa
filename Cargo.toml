@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["crates/niwa-blocker", "crates/niwa-core", "crates/niwa-cli", "crates/niwa-service", "app/src-tauri"]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+license = "UNLICENSED"
+publish = false
+
+# What users install: one optimised unit per program, with debug symbols
+# stripped. Smaller and a little quicker than the default release build.
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

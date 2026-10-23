@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Niwa UI mockup</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,0..100&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<style>
+
+a{color:#4E6A35}a:hover{color:#3E5429}
+button,a{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .2s cubic-bezier(.3,.7,.2,1),filter .2s ease}
+button:not([aria-disabled="true"]):hover,a[href]:hover{filter:brightness(.97)}
+button:not([aria-disabled="true"]):active,a[href]:active{transform:scale(.97)}
+button:focus-visible,a:focus-visible{outline:2px solid #4E6A35;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.tg{appearance:none;-webkit-appearance:none;width:40px;height:24px;border-radius:12px;background:#D9CCB5;position:relative;cursor:pointer;margin:0;flex-shrink:0;transition:background .3s cubic-bezier(.3,.7,.2,1)}
+.tg::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FBF8F1;transition:left .3s cubic-bezier(.3,.7,.2,1);box-shadow:0 1px 2px rgba(62,50,38,.25)}
+.tg:checked{background:#5F7F43}
+.tg:checked::after{left:19px}
+.tg:focus-visible{outline:2px solid #3E5429;outline-offset:2px}
+</style>
+
+<style>
+:root{color-scheme:light}
+body{margin:0;min-height:100vh;background:#E7DFD1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:32px 16px;box-sizing:border-box;font-family:'Figtree',system-ui,sans-serif}
+.card{width:380px;height:620px;border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(62,50,38,.18),0 2px 6px rgba(62,50,38,.1);background:#F6F0E4}
+.screen{display:none}
+.screen.active{display:block;animation:screenIn .3s cubic-bezier(.3,.7,.2,1)}
+@keyframes screenIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.dev-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:420px}
+.dev-nav a{font-size:12px;color:#6B5844;text-decoration:none;padding:6px 10px;border-radius:999px;background:#F6F0E4}
+.dev-nav a.on{background:#4E6A35;color:#F6F0E4}
+@media (prefers-reduced-motion:reduce){.screen.active{animation:none}}
+</style>
+</head>
+<body>
+<!-- Niwa UI mockup: all screens, one file. Open in a browser. Links between screens use #ScreenId. -->
+<div class="card">
+<section class="screen" id="Start" aria-label="Plant a seed">
+<div style="width: 380px; height: 620px; box-sizing: border-box; background: #F6F0E4; color: #3E3226; font-family: 'Figtree', system-ui, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 10px 20px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F7F43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"></path><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"></path><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"></path></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 21px; font-weight: 500; letter-spacing: -0.01em">niwa</span>
+</div>
+<div style="display: flex; gap: 2px">
+<button aria-label="Minimize to tray" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"></path></svg></button>
+<button aria-label="Close" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button>
+</div>
+</div>
+<nav aria-label="Sections" style="display: flex; gap: 4px; margin: 0 16px; padding: 4px; background: #EADFCB; border-radius: 14px">
+<a href="#Start" aria-current="page" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; background: #FBF8F1; color: #3E5429; font-weight: 600; font-size: 13px; text-decoration: none; box-shadow: 0 1px 2px rgba(62,50,38,0.12)">Focus</a>
+<a href="#Garden" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Garden</a>
+<a href="#Stats" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Stats</a>
+<a href="#Blocks" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Blocks</a>
+</nav>
+<div style="padding: 18px 24px 0">
+<h1 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 26px; font-weight: 400; letter-spacing: -0.01em">Plant a seed</h1>
+<p style="margin: 2px 0 0; font-size: 13px; color: #6B5844">Longer sessions grow rarer plants.</p>
+</div>
+<div role="radiogroup" aria-label="Duration" style="margin: 14px 16px 0; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+<div class="dur-thumb" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: calc((100% - 18px) / 4); height: 44px; box-sizing: border-box; border-radius: 12px; border: 1.5px solid #4E6A35; background: #DCE5C4; transform: translateX(calc(100% + 6px)); transition: transform 0.35s cubic-bezier(0.3, 0.7, 0.2, 1)"></div>
+<button class="dur" data-i="0" role="radio" aria-checked="false" style="position: relative; height: 44px; border-radius: 12px; border: 1px solid #E0D3BD; background: transparent; color: #3E3226; font-family: inherit; font-size: 14px; font-weight: 400; cursor: pointer">25 min</button><button class="dur" data-i="1" role="radio" aria-checked="true" style="position: relative; height: 44px; border-radius: 12px; border: 1px solid transparent; background: transparent; color: #3E5429; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">50 min</button><button class="dur" data-i="2" role="radio" aria-checked="false" style="position: relative; height: 44px; border-radius: 12px; border: 1px solid #E0D3BD; background: transparent; color: #3E3226; font-family: inherit; font-size: 14px; font-weight: 400; cursor: pointer">90 min</button><button class="dur" data-i="3" role="radio" aria-checked="false" style="position: relative; height: 44px; border-radius: 12px; border: 1px solid #E0D3BD; background: transparent; color: #3E3226; font-family: inherit; font-size: 14px; font-weight: 400; cursor: pointer">Custom</button>
+</div>
+<div role="radiogroup" aria-label="Seed" style="margin: 10px 16px 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+<button role="radio" aria-checked="false" class="seed" data-i="0" style="padding: 6px 0 8px; border-radius: 14px; border: 1.5px solid #E0D3BD; background: #F3EBDC; box-shadow: 0 0 0 rgba(62,50,38,0); transform: translateY(0px); font-family: inherit; color: #3E3226; display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer">
+<svg width="56" height="50" viewBox="0 0 80 72" aria-hidden="true"><path d="M40 48 C39 42 41 38 40 32" fill="none" stroke="#5E7A3F" stroke-width="2.2" stroke-linecap="round"></path><path d="M40 35 C33 35 29 31 29 26 C35 26 39.5 30 40 35 Z" fill="#7A9A55"></path><path d="M40 33 C47 33 51 29 51 24 C45 24 40.5 28 40 33 Z" fill="#8FAE68"></path><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect></svg>
+<span style="font-size: 12px; font-weight: 600; color: #3E3226">Sprout</span><span style="font-size: 11px; color: #6B5844">any</span>
+</button>
+<button role="radio" aria-checked="false" class="seed" data-i="1" style="padding: 6px 0 8px; border-radius: 14px; border: 1.5px solid #E0D3BD; background: #F3EBDC; box-shadow: 0 0 0 rgba(62,50,38,0); transform: translateY(0px); font-family: inherit; color: #3E3226; display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer">
+<svg width="56" height="50" viewBox="0 0 80 72" aria-hidden="true"><circle cx="30" cy="37" r="8" fill="#4E6A35"></circle><circle cx="50" cy="37" r="8" fill="#4E6A35"></circle><circle cx="40" cy="30" r="10.5" fill="#5F7F43"></circle><circle cx="34" cy="41" r="7" fill="#5F7F43"></circle><circle cx="46" cy="41" r="7" fill="#5F7F43"></circle><circle cx="37" cy="25.5" r="4.2" fill="#7A9A55"></circle><circle cx="33" cy="31" r="3.8" fill="#D9A58B"></circle><circle cx="33" cy="31" r="2" fill="#C98E74"></circle><circle cx="47" cy="24" r="3.8" fill="#D9A58B"></circle><circle cx="47" cy="24" r="2" fill="#C98E74"></circle><circle cx="45" cy="40" r="3.8" fill="#D9A58B"></circle><circle cx="45" cy="40" r="2" fill="#C98E74"></circle><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect></svg>
+<span style="font-size: 12px; font-weight: 600; color: #3E3226">Camellia</span><span style="font-size: 11px; color: #6B5844">45m+</span>
+</button>
+<button role="radio" aria-checked="true" class="seed" data-i="2" style="padding: 6px 0 8px; border-radius: 14px; border: 1.5px solid #4E6A35; background: #FBF8F1; box-shadow: 0 4px 10px rgba(62,50,38,0.12); transform: translateY(-2px); font-family: inherit; color: #3E3226; display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer">
+<svg width="56" height="50" viewBox="0 0 80 72" aria-hidden="true"><path d="M40 48 C37 41 44 37 41 31 C39 27 42 22 47 19" fill="none" stroke="#6B4F38" stroke-width="4" stroke-linecap="round"></path><path d="M41 34 C36 32 31 32 27 33" fill="none" stroke="#6B4F38" stroke-width="2.4" stroke-linecap="round"></path><circle cx="22" cy="33" r="5" fill="#4E6A35"></circle><circle cx="27" cy="30.5" r="6" fill="#5F7F43"></circle><circle cx="33" cy="32.5" r="5" fill="#4E6A35"></circle><circle cx="25.5" cy="28.5" r="3.2" fill="#7A9A55"></circle><circle cx="41" cy="19" r="5" fill="#4E6A35"></circle><circle cx="47" cy="15.5" r="6.5" fill="#5F7F43"></circle><circle cx="53.5" cy="18" r="5" fill="#4E6A35"></circle><circle cx="45" cy="13.5" r="3.4" fill="#7A9A55"></circle><circle cx="56" cy="29" r="4.8" fill="#5F7F43"></circle><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><path d="M30 46.6 Q34 43.6 38 46 Q42 43.2 46 45.8 Q49 44.2 51 46.6 Z" fill="#7A9A55"></path></svg>
+<span style="font-size: 12px; font-weight: 600; color: #3E5429">Pine</span><span style="font-size: 11px; color: #4E6A35">50m+</span>
+</button>
+<button role="radio" aria-checked="false" aria-disabled="true" aria-label="Maple, needs 90 minutes" style="padding: 6px 0 8px; border-radius: 14px; border: 1.5px dashed #D6C7AD; background: transparent; font-family: inherit; color: #7A6650; display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: not-allowed">
+<svg width="56" height="50" viewBox="0 0 80 72" aria-hidden="true" style="opacity: 0.45"><path d="M40 48 C39.5 42 41 38 40 33" fill="none" stroke="#6B4F38" stroke-width="3.2" stroke-linecap="round"></path><circle cx="28" cy="29" r="7" fill="#A85E41"></circle><circle cx="52" cy="29" r="7" fill="#A85E41"></circle><circle cx="40" cy="22" r="10" fill="#C0714F"></circle><circle cx="36" cy="30" r="6.5" fill="#D08A5E"></circle><circle cx="45" cy="30" r="6.5" fill="#D08A5E"></circle><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect></svg>
+<span style="font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 3px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Maple</span><span style="font-size: 11px">90m+</span>
+</button>
+</div>
+<div style="margin: 10px 16px 0; padding: 8px 12px 6px; border-radius: 16px; background: #EADFCB">
+<div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B5844; font-weight: 600">Growth stages</div>
+<div style="display: flex; align-items: flex-end; justify-content: space-between">
+<svg width="52" height="47" viewBox="0 0 80 72" role="img" aria-label="Stage 1, seed"><path d="M30 47 Q40 40 50 47 Z" fill="#6B5240"></path><ellipse cx="40" cy="42.6" rx="2.6" ry="1.8" fill="#C9A97C"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect></svg>
+<svg width="52" height="47" viewBox="0 0 80 72" role="img" aria-label="Stage 2, sprout"><path d="M40 47 C39.5 43 40.5 40 40 36" fill="none" stroke="#5E7A3F" stroke-width="1.8" stroke-linecap="round"></path><path d="M40 38 C35 38 32 35 32 32 C36 32 39.5 34.5 40 38 Z" fill="#7A9A55"></path><path d="M40 37 C45 37 48 34 48 31 C44 31 40.5 33.5 40 37 Z" fill="#8FAE68"></path><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect></svg>
+<svg width="52" height="47" viewBox="0 0 80 72" role="img" aria-label="Stage 3, sapling"><path d="M40 48 C38 42 43 38 41 32 C40 29 41 26 43.5 23.5" fill="none" stroke="#6B4F38" stroke-width="3.2" stroke-linecap="round"></path><path d="M41 36 C37.5 35 34.5 35 31.5 36" fill="none" stroke="#6B4F38" stroke-width="2" stroke-linecap="round"></path><circle cx="28" cy="36" r="3.6" fill="#4E6A35"></circle><circle cx="32" cy="34" r="4.4" fill="#5F7F43"></circle><circle cx="36" cy="36" r="3.2" fill="#4E6A35"></circle><circle cx="39.5" cy="23.5" r="3.8" fill="#4E6A35"></circle><circle cx="44" cy="20.5" r="5" fill="#5F7F43"></circle><circle cx="48.5" cy="23" r="3.6" fill="#4E6A35"></circle><circle cx="42.5" cy="18.6" r="2.6" fill="#7A9A55"></circle><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect></svg>
+<svg width="52" height="47" viewBox="0 0 80 72" role="img" aria-label="Stage 4, young tree"><path d="M40 48 C37 41 44 37 41 31 C39 27 42 22 47 19" fill="none" stroke="#6B4F38" stroke-width="4" stroke-linecap="round"></path><path d="M41 34 C36 32 31 32 27 33" fill="none" stroke="#6B4F38" stroke-width="2.4" stroke-linecap="round"></path><circle cx="23" cy="33" r="4.4" fill="#4E6A35"></circle><circle cx="27.5" cy="31" r="5.2" fill="#5F7F43"></circle><circle cx="32.5" cy="33" r="4.4" fill="#4E6A35"></circle><circle cx="26" cy="29" r="2.8" fill="#7A9A55"></circle><circle cx="42" cy="19.5" r="4.4" fill="#4E6A35"></circle><circle cx="47" cy="16.5" r="5.6" fill="#5F7F43"></circle><circle cx="52.5" cy="18.5" r="4.4" fill="#4E6A35"></circle><circle cx="45.5" cy="14.6" r="3" fill="#7A9A55"></circle><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect></svg>
+<svg width="52" height="47" viewBox="0 0 80 72" role="img" aria-label="Stage 5, fully grown pine bonsai"><path d="M40 48 C37 41 44 37 41 31 C39 27 42 22 47 19" fill="none" stroke="#6B4F38" stroke-width="4" stroke-linecap="round"></path><path d="M41 34 C36 32 31 32 27 33" fill="none" stroke="#6B4F38" stroke-width="2.4" stroke-linecap="round"></path><path d="M43 27 C47 27.5 51 28.5 54 30" fill="none" stroke="#6B4F38" stroke-width="2" stroke-linecap="round"></path><circle cx="22" cy="33" r="5" fill="#4E6A35"></circle><circle cx="27" cy="30.5" r="6" fill="#5F7F43"></circle><circle cx="33" cy="32.5" r="5" fill="#4E6A35"></circle><circle cx="25.5" cy="28.5" r="3.2" fill="#7A9A55"></circle><circle cx="41" cy="19" r="5" fill="#4E6A35"></circle><circle cx="47" cy="15.5" r="6.5" fill="#5F7F43"></circle><circle cx="53.5" cy="18" r="5" fill="#4E6A35"></circle><circle cx="45" cy="13.5" r="3.4" fill="#7A9A55"></circle><circle cx="51" cy="30.5" r="4" fill="#4E6A35"></circle><circle cx="56" cy="29" r="4.8" fill="#5F7F43"></circle><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><path d="M30 46.6 Q34 43.6 38 46 Q42 43.2 46 45.8 Q49 44.2 51 46.6 Z" fill="#7A9A55"></path></svg>
+</div>
+</div>
+<button style="margin: 10px 16px 0; height: 48px; padding: 0 14px; border-radius: 14px; border: 1px solid #E0D3BD; background: #FBF8F1; font-family: inherit; color: #3E3226; display: flex; align-items: center; justify-content: space-between; cursor: pointer">
+<span style="display: flex; flex-direction: column; align-items: flex-start"><span style="font-size: 14px; font-weight: 600">Deep work</span><span style="font-size: 11px; color: #6B5844">Steam, Epic, Riot +2 apps</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B5844" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+</button>
+<a href="#Main" style="margin: 10px 16px 0; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 14px; background: #4E6A35; color: #F6F0E4; font-size: 15px; font-weight: 600; text-decoration: none"><span class="cta-label">Plant &amp; start · 50 min</span></a>
+</div>
+</section><section class="screen" id="Main" aria-label="Focus">
+<div style="width: 380px; height: 620px; box-sizing: border-box; background: #F6F0E4; color: #3E3226; font-family: 'Figtree', system-ui, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 10px 20px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F7F43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"></path><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"></path><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"></path></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 21px; font-weight: 500; letter-spacing: -0.01em">niwa</span>
+</div>
+<div style="display: flex; gap: 2px">
+<button aria-label="Minimize to tray" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"></path></svg></button>
+<button aria-label="Close" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button>
+</div>
+</div>
+<nav aria-label="Sections" style="display: flex; gap: 4px; margin: 0 16px; padding: 4px; background: #EADFCB; border-radius: 14px">
+<a href="#Main" aria-current="page" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; background: #FBF8F1; color: #3E5429; font-weight: 600; font-size: 13px; text-decoration: none; box-shadow: 0 1px 2px rgba(62,50,38,0.12)">Focus</a>
+<a href="#Garden" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Garden</a>
+<a href="#Stats" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Stats</a>
+<a href="#Blocks" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Blocks</a>
+</nav>
+<div style="padding: 22px 24px 0; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B5844; font-weight: 600">Deep work · Gentle</div>
+<div style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 64px; font-weight: 350; line-height: 1.05; letter-spacing: -0.02em; font-variant-numeric: tabular-nums">18:20</div>
+<div style="font-size: 13px; color: #6B5844">left of a 50 min session</div>
+<div role="progressbar" aria-label="Session progress" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 100%; height: 6px; background: #E4D9C5; border-radius: 3px; margin-top: 14px; overflow: hidden"><div style="width: 63%; height: 100%; background: #6E8F4A; border-radius: 3px"></div></div>
+</div>
+<div style="padding: 14px 24px 0; display: flex; align-items: center; gap: 6px; flex-wrap: wrap">
+<span style="font-size: 12px; color: #6B5844; margin-right: 2px">Blocking</span>
+<span style="font-size: 12px; padding: 5px 10px; border-radius: 999px; background: #DCE5C4; color: #3E5429; font-weight: 500">All Steam games</span>
+<span style="font-size: 12px; padding: 5px 10px; border-radius: 999px; background: #DCE5C4; color: #3E5429; font-weight: 500">Epic</span>
+<span style="font-size: 12px; padding: 5px 10px; border-radius: 999px; background: #DCE5C4; color: #3E5429; font-weight: 500">Riot</span>
+<span style="font-size: 12px; padding: 5px 10px; border-radius: 999px; background: #EADFCB; color: #6B5844; font-weight: 500">+2</span>
+</div>
+<div style="margin: 16px 16px 0; height: 236px; border-radius: 18px; background: #EFE7D9; position: relative; overflow: hidden">
+<svg width="348" height="236" viewBox="0 0 348 236" aria-label="A young pine sapling growing in a clay pot" role="img" style="position: absolute; left: 0; top: 0">
+<defs><pattern id="ajiro-main" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#EFE7D9"></rect><g fill="none" stroke="#E2D5C0" stroke-width="1"><path d="M0 0.5H24M0 12.5H24M0.5 0V24M12.5 0V24"></path><path d="M0 4.5H12M0 8.5H12"></path><path d="M16.5 0V12M20.5 0V12"></path><path d="M4.5 12V24M8.5 12V24"></path><path d="M12 16.5H24M12 20.5H24"></path></g></pattern></defs>
+<rect x="0" y="0" width="348" height="188" fill="url(#ajiro-main)"></rect>
+<rect x="0" y="22" width="348" height="5" fill="#DCCCB1"></rect>
+<rect x="14" y="0" width="6" height="188" fill="#DCCCB1"></rect>
+<rect x="328" y="0" width="6" height="188" fill="#DCCCB1"></rect>
+<rect x="0" y="188" width="348" height="48" fill="#E6DBC9"></rect>
+<rect x="0" y="186" width="348" height="3" fill="#D9CBB3"></rect>
+<rect x="0" y="214" width="348" height="1" fill="#DED2BE"></rect>
+<ellipse cx="174" cy="220" rx="80" ry="4" fill="#3E3226" opacity="0.08"></ellipse>
+<rect x="108" y="212" width="12" height="8" rx="1" fill="#5E4430"></rect><rect x="228" y="212" width="12" height="8" rx="1" fill="#5E4430"></rect>
+<rect x="100" y="206" width="148" height="7" rx="2" fill="#5E4430"></rect>
+<rect x="104" y="202" width="140" height="5" rx="2" fill="#7A5B40"></rect>
+<rect x="108" y="202.8" width="62" height="1.2" rx="0.6" fill="#9A7A5A"></rect>
+<g transform="translate(86,51) scale(2.2)">
+<path d="M40 48 C38 42 43 38 41 32 C40 29 41 26 43.5 23.5" fill="none" stroke="#6B4F38" stroke-width="3.2" stroke-linecap="round"></path><path d="M41 36 C37.5 35 34.5 35 31.5 36" fill="none" stroke="#6B4F38" stroke-width="2" stroke-linecap="round"></path><path d="M39.6 45 C38.4 41 42 38.5 40.6 34" fill="none" stroke="#8A6A4E" stroke-width="0.9" stroke-linecap="round"></path>
+<circle cx="28" cy="36" r="3.6" fill="#4E6A35"></circle><circle cx="32" cy="34" r="4.4" fill="#5F7F43"></circle><circle cx="36" cy="36" r="3.2" fill="#4E6A35"></circle><circle cx="31" cy="32.4" r="2.3" fill="#7A9A55"></circle>
+<circle cx="39.5" cy="23.5" r="3.8" fill="#4E6A35"></circle><circle cx="44" cy="20.5" r="5" fill="#5F7F43"></circle><circle cx="48.5" cy="23" r="3.6" fill="#4E6A35"></circle><circle cx="42.5" cy="18.6" r="2.6" fill="#7A9A55"></circle><circle cx="46.4" cy="18.4" r="2" fill="#8FAE68"></circle>
+<ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect>
+</g>
+</svg>
+<div style="position: absolute; left: 14px; right: 14px; top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #5A4836">
+<span style="background: #F6F0E4; padding: 5px 10px; border-radius: 999px; font-weight: 500">Pine · stage 3 of 5</span>
+<span style="background: #F6F0E4; padding: 5px 10px; border-radius: 999px">Fully grown in 18 min</span>
+</div>
+</div>
+<div style="padding: 14px 16px 16px; display: flex; gap: 8px">
+<a href="#Withered" style="flex-grow: 1; height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid #D6C7AD; color: #6B5844; font-size: 14px; font-weight: 500; text-decoration: none">Give up</a>
+<a href="#Bloomed" style="flex-grow: 2; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #4E6A35; color: #F6F0E4; font-size: 14px; font-weight: 600; text-decoration: none">Skip to bloom (demo)</a>
+</div>
+</div>
+</section><section class="screen" id="Bloomed" aria-label="Fully grown">
+<div style="width: 380px; height: 620px; box-sizing: border-box; background: #F6F0E4; color: #3E3226; font-family: 'Figtree', system-ui, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 10px 20px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F7F43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"></path><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"></path><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"></path></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 21px; font-weight: 500; letter-spacing: -0.01em">niwa</span>
+</div>
+<div style="display: flex; gap: 2px">
+<button aria-label="Minimize to tray" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"></path></svg></button>
+<button aria-label="Close" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button>
+</div>
+</div>
+<div style="margin: 4px 16px 0; height: 300px; border-radius: 18px; background: #EFE7D9; position: relative; overflow: hidden">
+<svg width="348" height="300" viewBox="0 0 348 300" role="img" aria-label="A fully grown pine bonsai in a clay pot" style="position: absolute; left: 0; top: 0">
+<defs><pattern id="ajiro-bloom" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#EFE7D9"></rect><g fill="none" stroke="#E2D5C0" stroke-width="1"><path d="M0 0.5H24M0 12.5H24M0.5 0V24M12.5 0V24"></path><path d="M0 4.5H12M0 8.5H12"></path><path d="M16.5 0V12M20.5 0V12"></path><path d="M4.5 12V24M8.5 12V24"></path><path d="M12 16.5H24M12 20.5H24"></path></g></pattern></defs>
+<rect x="0" y="0" width="348" height="238" fill="url(#ajiro-bloom)"></rect>
+<rect x="0" y="22" width="348" height="5" fill="#DCCCB1"></rect>
+<rect x="14" y="0" width="6" height="238" fill="#DCCCB1"></rect>
+<rect x="328" y="0" width="6" height="238" fill="#DCCCB1"></rect>
+<rect x="0" y="238" width="348" height="62" fill="#E6DBC9"></rect>
+<rect x="0" y="236" width="348" height="3" fill="#D9CBB3"></rect>
+<rect x="0" y="272" width="348" height="1" fill="#DED2BE"></rect>
+<ellipse cx="174" cy="278" rx="94" ry="5" fill="#3E3226" opacity="0.08"></ellipse>
+<rect x="96" y="268" width="14" height="10" rx="1" fill="#5E4430"></rect><rect x="238" y="268" width="14" height="10" rx="1" fill="#5E4430"></rect>
+<rect x="86" y="261" width="176" height="8" rx="2" fill="#5E4430"></rect>
+<rect x="90" y="256" width="168" height="6" rx="2" fill="#7A5B40"></rect>
+<rect x="95" y="257" width="74" height="1.4" rx="0.7" fill="#9A7A5A"></rect>
+<g transform="translate(70,77) scale(2.6)">
+<path d="M40 48 C37 41 44 37 41 31 C39 27 42 22 47 19" fill="none" stroke="#6B4F38" stroke-width="4" stroke-linecap="round"></path><path d="M41 34 C36 32 31 32 27 33" fill="none" stroke="#6B4F38" stroke-width="2.4" stroke-linecap="round"></path><path d="M43 27 C47 27.5 51 28.5 54 30" fill="none" stroke="#6B4F38" stroke-width="2" stroke-linecap="round"></path><path d="M39 45 C37.5 40 42 37 40 32" fill="none" stroke="#8A6A4E" stroke-width="1.1" stroke-linecap="round"></path>
+<circle cx="22" cy="33" r="5" fill="#4E6A35"></circle><circle cx="27" cy="30.5" r="6" fill="#5F7F43"></circle><circle cx="33" cy="32.5" r="5" fill="#4E6A35"></circle><circle cx="25.5" cy="28.5" r="3.2" fill="#7A9A55"></circle><circle cx="30" cy="28" r="2.6" fill="#8FAE68"></circle>
+<circle cx="41" cy="19" r="5" fill="#4E6A35"></circle><circle cx="47" cy="15.5" r="6.5" fill="#5F7F43"></circle><circle cx="53.5" cy="18" r="5" fill="#4E6A35"></circle><circle cx="45" cy="13.5" r="3.4" fill="#7A9A55"></circle><circle cx="50" cy="13" r="2.8" fill="#8FAE68"></circle>
+<circle cx="51" cy="30.5" r="4" fill="#4E6A35"></circle><circle cx="56" cy="29" r="4.8" fill="#5F7F43"></circle><circle cx="55" cy="27" r="2.4" fill="#7A9A55"></circle>
+<ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect><path d="M30 46.6 Q34 43.6 38 46 Q42 43.2 46 45.8 Q49 44.2 51 46.6 Z" fill="#7A9A55"></path>
+</g>
+</svg>
+</div>
+<div style="padding: 20px 24px 0; text-align: center">
+<div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #4E6A35; font-weight: 600">Session complete</div>
+<h1 style="margin: 6px 0 0; font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 28px; font-weight: 400; letter-spacing: -0.01em">Your pine is fully grown</h1>
+<p style="margin: 6px 0 0; font-size: 13px; color: #6B5844">50 minutes of deep work, no slips.</p>
+</div>
+<div style="padding: 14px 24px 0; display: flex; justify-content: center; gap: 8px">
+<span style="font-size: 12px; padding: 6px 12px; border-radius: 999px; background: #DCE5C4; color: #3E5429; font-weight: 500">+50 min today</span>
+<span style="font-size: 12px; padding: 6px 12px; border-radius: 999px; background: #EADFCB; color: #5A4836; font-weight: 500">7-day streak</span>
+</div>
+<div style="padding: 20px 16px 16px; display: flex; gap: 8px; margin-top: auto">
+<a href="#Start" style="flex-grow: 1; height: 48px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 1px solid #D6C7AD; color: #6B5844; font-size: 14px; font-weight: 500; text-decoration: none">Grow another</a>
+<a href="#Garden" style="flex-grow: 2; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: #4E6A35; color: #F6F0E4; font-size: 14px; font-weight: 600; text-decoration: none">Place in garden</a>
+</div>
+</div>
+</section><section class="screen" id="Withered" aria-label="Withered">
+<div style="width: 380px; height: 620px; box-sizing: border-box; background: #F3EEE6; color: #3E3226; font-family: 'Figtree', system-ui, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 10px 20px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"></path><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"></path><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"></path></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 21px; font-weight: 500; letter-spacing: -0.01em">niwa</span>
+</div>
+<div style="display: flex; gap: 2px">
+<button aria-label="Minimize to tray" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"></path></svg></button>
+<button aria-label="Close" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button>
+</div>
+</div>
+<div style="margin: 4px 16px 0; height: 300px; border-radius: 18px; background: #E9E3D9; position: relative; overflow: hidden">
+<svg width="348" height="300" viewBox="0 0 348 300" role="img" aria-label="A withered sapling in a cracked clay pot" style="position: absolute; left: 0; top: 0">
+<defs><pattern id="ajiro-wither" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#E9E3D9"></rect><g fill="none" stroke="#DCD3C5" stroke-width="1"><path d="M0 0.5H24M0 12.5H24M0.5 0V24M12.5 0V24"></path><path d="M0 4.5H12M0 8.5H12"></path><path d="M16.5 0V12M20.5 0V12"></path><path d="M4.5 12V24M8.5 12V24"></path><path d="M12 16.5H24M12 20.5H24"></path></g></pattern></defs>
+<rect x="0" y="0" width="348" height="238" fill="url(#ajiro-wither)"></rect>
+<rect x="0" y="22" width="348" height="5" fill="#D4C8B6"></rect>
+<rect x="14" y="0" width="6" height="238" fill="#D4C8B6"></rect>
+<rect x="328" y="0" width="6" height="238" fill="#D4C8B6"></rect>
+<rect x="0" y="238" width="348" height="62" fill="#DFD7CA"></rect>
+<rect x="0" y="236" width="348" height="3" fill="#D2C7B6"></rect>
+<rect x="0" y="272" width="348" height="1" fill="#D6CCBD"></rect>
+<ellipse cx="174" cy="278" rx="94" ry="5" fill="#3E3226" opacity="0.08"></ellipse>
+<rect x="96" y="268" width="14" height="10" rx="1" fill="#655646"></rect><rect x="238" y="268" width="14" height="10" rx="1" fill="#655646"></rect>
+<rect x="86" y="261" width="176" height="8" rx="2" fill="#655646"></rect>
+<rect x="90" y="256" width="168" height="6" rx="2" fill="#7A6A58"></rect>
+<rect x="95" y="257" width="74" height="1.4" rx="0.7" fill="#8E7E6C"></rect>
+<path d="M282 288 C286 283 293 283 297 287 C292 291 286 291 282 288 Z" fill="#C4B197"></path>
+<g transform="translate(70,77) scale(2.6)">
+<path d="M40 48 C40 40 42 34 48 31 C51 30 52 33 51 36" fill="none" stroke="#9C8165" stroke-width="2.2" stroke-linecap="round"></path>
+<path d="M51 36 C53 39 52 43 49 44 C48 41 49 38 51 36 Z" fill="#B9A68C"></path>
+<path d="M40 40 C35 40 31 43 31 46 C34 46 38 44 40 40 Z" fill="#C4B197"></path>
+<path d="M44 33.5 C42 30 42.5 27 44.5 25.5 C46 28 46 31 44 33.5 Z" fill="#A89379"></path>
+<ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A08A72"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#8E7860"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#85705A"></rect>
+<path d="M33 55 L35 58.5 L33.8 62" fill="none" stroke="#6B5844" stroke-width="0.8" stroke-linecap="round"></path>
+</g>
+</svg>
+</div>
+<div style="padding: 20px 28px 0; text-align: center">
+<div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7A6650; font-weight: 600">Session ended early</div>
+<h1 style="margin: 6px 0 0; font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 28px; font-weight: 400; letter-spacing: -0.01em">Your pine withered</h1>
+<p style="margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: #6B5844">You gave up with 18:20 left. It will rest in your garden as a reminder. Finish one session today to keep your streak.</p>
+</div>
+<div style="padding: 20px 16px 16px; display: flex; gap: 8px; margin-top: auto">
+<a href="#Garden" style="flex-grow: 1; height: 48px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 1px solid #D6C7AD; color: #6B5844; font-size: 14px; font-weight: 500; text-decoration: none">View garden</a>
+<a href="#Start" style="flex-grow: 2; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: #4E6A35; color: #F6F0E4; font-size: 14px; font-weight: 600; text-decoration: none">Plant a new seed</a>
+</div>
+</div>
+</section><section class="screen" id="Garden" aria-label="Garden">
+<div style="width: 380px; height: 620px; box-sizing: border-box; background: #F6F0E4; color: #3E3226; font-family: 'Figtree', system-ui, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 10px 20px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F7F43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"></path><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"></path><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"></path></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 21px; font-weight: 500; letter-spacing: -0.01em">niwa</span>
+</div>
+<div style="display: flex; gap: 2px">
+<button aria-label="Minimize to tray" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"></path></svg></button>
+<button aria-label="Close" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button>
+</div>
+</div>
+<nav aria-label="Sections" style="display: flex; gap: 4px; margin: 0 16px; padding: 4px; background: #EADFCB; border-radius: 14px">
+<a href="#Main" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Focus</a>
+<a href="#Garden" aria-current="page" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; background: #FBF8F1; color: #3E5429; font-weight: 600; font-size: 13px; text-decoration: none; box-shadow: 0 1px 2px rgba(62,50,38,0.12)">Garden</a>
+<a href="#Stats" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Stats</a>
+<a href="#Blocks" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Blocks</a>
+</nav>
+<div style="padding: 20px 24px 12px; display: flex; align-items: baseline; justify-content: space-between">
+<h1 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 26px; font-weight: 400; letter-spacing: -0.01em">Your garden</h1>
+<span style="font-size: 12px; color: #6B5844">14 grown · 2 withered</span>
+</div>
+<div style="margin: 0 16px; padding: 12px; border-radius: 18px; background: #EADFCB; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px; border: 1.5px solid #6E8F4A">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Pine bonsai"><path d="M40 48 C37 41 44 37 41 31 C39 27 42 22 47 19" fill="none" stroke="#6B4F38" stroke-width="4" stroke-linecap="round"></path><path d="M41 34 C36 32 31 32 27 33" fill="none" stroke="#6B4F38" stroke-width="2.4" stroke-linecap="round"></path><path d="M43 27 C47 27.5 51 28.5 54 30" fill="none" stroke="#6B4F38" stroke-width="2" stroke-linecap="round"></path><path d="M39 45 C37.5 40 42 37 40 32" fill="none" stroke="#8A6A4E" stroke-width="1.1" stroke-linecap="round"></path><circle cx="22" cy="33" r="5" fill="#4E6A35"></circle><circle cx="27" cy="30.5" r="6" fill="#5F7F43"></circle><circle cx="33" cy="32.5" r="5" fill="#4E6A35"></circle><circle cx="25.5" cy="28.5" r="3.2" fill="#7A9A55"></circle><circle cx="30" cy="28" r="2.6" fill="#8FAE68"></circle><circle cx="41" cy="19" r="5" fill="#4E6A35"></circle><circle cx="47" cy="15.5" r="6.5" fill="#5F7F43"></circle><circle cx="53.5" cy="18" r="5" fill="#4E6A35"></circle><circle cx="45" cy="13.5" r="3.4" fill="#7A9A55"></circle><circle cx="50" cy="13" r="2.8" fill="#8FAE68"></circle><circle cx="51" cy="30.5" r="4" fill="#4E6A35"></circle><circle cx="56" cy="29" r="4.8" fill="#5F7F43"></circle><circle cx="55" cy="27" r="2.4" fill="#7A9A55"></circle><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect><path d="M30 46.6 Q34 43.6 38 46 Q42 43.2 46 45.8 Q49 44.2 51 46.6 Z" fill="#7A9A55"></path></svg>
+<span style="font-size: 11px; color: #3E5429; font-weight: 600">New · Pine · 2h</span>
+</div>
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Camellia shrub in bloom"><circle cx="30" cy="37" r="8" fill="#4E6A35"></circle><circle cx="50" cy="37" r="8" fill="#4E6A35"></circle><circle cx="40" cy="30" r="10.5" fill="#5F7F43"></circle><circle cx="34" cy="41" r="7" fill="#5F7F43"></circle><circle cx="46" cy="41" r="7" fill="#5F7F43"></circle><circle cx="37" cy="25.5" r="4.2" fill="#7A9A55"></circle><circle cx="47" cy="30" r="3.4" fill="#7A9A55"></circle><circle cx="28" cy="34" r="3" fill="#7A9A55"></circle><circle cx="33" cy="31" r="3.8" fill="#D9A58B"></circle><circle cx="33" cy="31" r="2" fill="#C98E74"></circle><circle cx="33" cy="31" r="0.9" fill="#E8C27A"></circle><circle cx="47" cy="24" r="3.8" fill="#D9A58B"></circle><circle cx="47" cy="24" r="2" fill="#C98E74"></circle><circle cx="47" cy="24" r="0.9" fill="#E8C27A"></circle><circle cx="45" cy="40" r="3.8" fill="#D9A58B"></circle><circle cx="45" cy="40" r="2" fill="#C98E74"></circle><circle cx="45" cy="40" r="0.9" fill="#E8C27A"></circle><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect></svg>
+<span style="font-size: 11px; color: #6B5844">Camellia · 60m</span>
+</div>
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Japanese maple in autumn colors"><path d="M40 48 C39.5 42 41 38 40 33" fill="none" stroke="#6B4F38" stroke-width="3.2" stroke-linecap="round"></path><path d="M40 38 C36 35 33 34 30 33" fill="none" stroke="#6B4F38" stroke-width="1.8" stroke-linecap="round"></path><path d="M40.5 36 C44 33 47 32 50 31" fill="none" stroke="#6B4F38" stroke-width="1.8" stroke-linecap="round"></path><circle cx="28" cy="29" r="7" fill="#A85E41"></circle><circle cx="52" cy="29" r="7" fill="#A85E41"></circle><circle cx="40" cy="22" r="10" fill="#C0714F"></circle><circle cx="32" cy="24" r="7" fill="#C0714F"></circle><circle cx="48" cy="24" r="7" fill="#C0714F"></circle><circle cx="36" cy="30" r="6.5" fill="#D08A5E"></circle><circle cx="45" cy="30" r="6.5" fill="#D08A5E"></circle><circle cx="37" cy="18" r="3.5" fill="#E0A47A"></circle><circle cx="45" cy="19" r="3" fill="#E0A47A"></circle><circle cx="30" cy="25" r="2.6" fill="#E0A47A"></circle><path d="M60 67 C62.5 64.5 66 64.5 68 66.5 C65.5 68.5 62.5 68.5 60 67 Z" fill="#C0714F"></path><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect></svg>
+<span style="font-size: 11px; color: #6B5844">Maple · 90m</span>
+</div>
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Bamboo"><rect x="33" y="14" width="4.5" height="34" rx="1.5" fill="#7A9A55"></rect><rect x="39.5" y="6" width="4.5" height="42" rx="1.5" fill="#8FAE68"></rect><rect x="46" y="20" width="4" height="28" rx="1.5" fill="#6E8F4A"></rect><rect x="33" y="24" width="4.5" height="1.4" fill="#A9C285"></rect><rect x="33" y="35" width="4.5" height="1.4" fill="#A9C285"></rect><rect x="39.5" y="16" width="4.5" height="1.4" fill="#B9CF98"></rect><rect x="39.5" y="27" width="4.5" height="1.4" fill="#B9CF98"></rect><rect x="39.5" y="38" width="4.5" height="1.4" fill="#B9CF98"></rect><rect x="46" y="30" width="4" height="1.4" fill="#A9C285"></rect><rect x="46" y="40" width="4" height="1.4" fill="#A9C285"></rect><path d="M44 14 C50 11 55 11 58 13 C53 15 48 15 44 14 Z" fill="#5F7F43"></path><path d="M39.5 20 C34 17 29 17 25 19 C30 21 35 21 39.5 20 Z" fill="#6E8F4A"></path><path d="M50 26 C55 24 59 25 61 27 C57 28 53 28 50 26 Z" fill="#7A9A55"></path><path d="M33 28 C28 27 25 28 23 30 C27 31 30 30 33 28 Z" fill="#5F7F43"></path><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect></svg>
+<span style="font-size: 11px; color: #6B5844">Bamboo · 75m</span>
+</div>
+
+<div style="background: #EFE6D6; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Withered plant"><path d="M40 48 C40 40 42 34 48 31 C51 30 52 33 51 36" fill="none" stroke="#9C8165" stroke-width="2.2" stroke-linecap="round"></path><path d="M51 36 C53 39 52 43 49 44 C48 41 49 38 51 36 Z" fill="#B9A68C"></path><path d="M40 40 C35 40 31 43 31 46 C34 46 38 44 40 40 Z" fill="#C4B197"></path><path d="M60 67 C62.5 64.5 66 64.5 68 66.5 C65.5 68.5 62.5 68.5 60 67 Z" fill="#C4B197"></path><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><path d="M33 55 L35 58.5 L33.8 62" fill="none" stroke="#7A5B3F" stroke-width="0.8" stroke-linecap="round"></path></svg>
+<span style="font-size: 11px; color: #7A6650; font-style: italic">Withered · 12m</span>
+</div>
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Sprout"><path d="M40 48 C39 42 41 38 40 32" fill="none" stroke="#5E7A3F" stroke-width="2.2" stroke-linecap="round"></path><path d="M40 35 C33 35 29 31 29 26 C35 26 39.5 30 40 35 Z" fill="#7A9A55"></path><path d="M40 33 C47 33 51 29 51 24 C45 24 40.5 28 40 33 Z" fill="#8FAE68"></path><path d="M39 34 C36 32 33 30 31 27.5" fill="none" stroke="#5E7A3F" stroke-width="0.7" stroke-linecap="round"></path><path d="M41 32 C44 30 47 28 49 25.5" fill="none" stroke="#6E8F4A" stroke-width="0.7" stroke-linecap="round"></path><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect></svg>
+<span style="font-size: 11px; color: #6B5844">Sprout · 25m</span>
+</div>
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Succulent rosette"><path d="M40 46 C32 45 26 40 24 34 C31 35 37 39 40 46 Z" fill="#8FA87A"></path><path d="M40 46 C48 45 54 40 56 34 C49 35 43 39 40 46 Z" fill="#8FA87A"></path><path d="M40 46 C34 41 31 34 32 27 C37 32 40 38 40 46 Z" fill="#9BB08A"></path><path d="M40 46 C46 41 49 34 48 27 C43 32 40 38 40 46 Z" fill="#9BB08A"></path><path d="M40 46 C37 39 37 32 40 25 C43 32 43 39 40 46 Z" fill="#B3C4A1"></path><circle cx="24.6" cy="34.4" r="1.2" fill="#D9A58B"></circle><circle cx="55.4" cy="34.4" r="1.2" fill="#D9A58B"></circle><circle cx="40" cy="25.6" r="1" fill="#D9A58B"></circle><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect></svg>
+<span style="font-size: 11px; color: #6B5844">Succulent · 45m</span>
+</div>
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Camellia shrub in pale bloom"><circle cx="30" cy="37" r="8" fill="#4E6A35"></circle><circle cx="50" cy="37" r="8" fill="#4E6A35"></circle><circle cx="40" cy="30" r="10.5" fill="#5F7F43"></circle><circle cx="34" cy="41" r="7" fill="#5F7F43"></circle><circle cx="46" cy="41" r="7" fill="#5F7F43"></circle><circle cx="37" cy="25.5" r="4.2" fill="#7A9A55"></circle><circle cx="47" cy="30" r="3.4" fill="#7A9A55"></circle><circle cx="36" cy="37" r="3.8" fill="#EBD3BE"></circle><circle cx="36" cy="37" r="2" fill="#DDB79C"></circle><circle cx="36" cy="37" r="0.9" fill="#E8C27A"></circle><circle cx="44" cy="26" r="3.8" fill="#EBD3BE"></circle><circle cx="44" cy="26" r="2" fill="#DDB79C"></circle><circle cx="44" cy="26" r="0.9" fill="#E8C27A"></circle><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect></svg>
+<span style="font-size: 11px; color: #6B5844">Camellia · 50m</span>
+</div>
+
+<div style="background: #F3EBDC; border-radius: 14px; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<svg width="76" height="68" viewBox="0 0 80 72" role="img" aria-label="Pine bonsai"><path d="M40 48 C37 41 44 37 41 31 C39 27 42 22 47 19" fill="none" stroke="#6B4F38" stroke-width="4" stroke-linecap="round"></path><path d="M41 34 C36 32 31 32 27 33" fill="none" stroke="#6B4F38" stroke-width="2.4" stroke-linecap="round"></path><path d="M43 27 C47 27.5 51 28.5 54 30" fill="none" stroke="#6B4F38" stroke-width="2" stroke-linecap="round"></path><path d="M39 45 C37.5 40 42 37 40 32" fill="none" stroke="#8A6A4E" stroke-width="1.1" stroke-linecap="round"></path><circle cx="22" cy="33" r="5" fill="#4E6A35"></circle><circle cx="27" cy="30.5" r="6" fill="#5F7F43"></circle><circle cx="33" cy="32.5" r="5" fill="#4E6A35"></circle><circle cx="25.5" cy="28.5" r="3.2" fill="#7A9A55"></circle><circle cx="30" cy="28" r="2.6" fill="#8FAE68"></circle><circle cx="41" cy="19" r="5" fill="#4E6A35"></circle><circle cx="47" cy="15.5" r="6.5" fill="#5F7F43"></circle><circle cx="53.5" cy="18" r="5" fill="#4E6A35"></circle><circle cx="45" cy="13.5" r="3.4" fill="#7A9A55"></circle><circle cx="50" cy="13" r="2.8" fill="#8FAE68"></circle><circle cx="51" cy="30.5" r="4" fill="#4E6A35"></circle><circle cx="56" cy="29" r="4.8" fill="#5F7F43"></circle><circle cx="55" cy="27" r="2.4" fill="#7A9A55"></circle><ellipse cx="40" cy="70" rx="19" ry="2" fill="#3E3226" opacity="0.1"></ellipse><path d="M26 50 L54 50 L51 66 Q50.5 69 47.5 69 L32.5 69 Q29.5 69 29 66 Z" fill="#A8825E"></path><path d="M40 50 L54 50 L51 66 Q50.5 69 47.5 69 L40 69 Z" fill="#96714F"></path><rect x="24" y="46" width="32" height="6" rx="2.5" fill="#8A6544"></rect><rect x="26.5" y="47.3" width="12" height="1.5" rx="0.75" fill="#B8936C"></rect><path d="M30 46.6 Q34 43.6 38 46 Q42 43.2 46 45.8 Q49 44.2 51 46.6 Z" fill="#7A9A55"></path></svg>
+<span style="font-size: 11px; color: #6B5844">Pine · 2h</span>
+</div>
+
+</div>
+<div style="padding: 12px 24px 16px; display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 12px; color: #6B5844">Next unlock: Wisteria at 25 h</span>
+<a href="#" style="font-size: 13px; font-weight: 600; text-decoration: none; padding: 12px 0">See all →</a>
+</div>
+</div>
+</section><section class="screen" id="Stats" aria-label="Stats">
+<div style="width: 380px; height: 620px; box-sizing: border-box; background: #F6F0E4; color: #3E3226; font-family: 'Figtree', system-ui, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 10px 20px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F7F43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"></path><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"></path><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"></path></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 21px; font-weight: 500; letter-spacing: -0.01em">niwa</span>
+</div>
+<div style="display: flex; gap: 2px">
+<button aria-label="Minimize to tray" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"></path></svg></button>
+<button aria-label="Close" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button>
+</div>
+</div>
+<nav aria-label="Sections" style="display: flex; gap: 4px; margin: 0 16px; padding: 4px; background: #EADFCB; border-radius: 14px">
+<a href="#Main" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Focus</a>
+<a href="#Garden" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Garden</a>
+<a href="#Stats" aria-current="page" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; background: #FBF8F1; color: #3E5429; font-weight: 600; font-size: 13px; text-decoration: none; box-shadow: 0 1px 2px rgba(62,50,38,0.12)">Stats</a>
+<a href="#Blocks" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Blocks</a>
+</nav>
+<div style="padding: 20px 24px 0">
+<div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B5844; font-weight: 600">This week</div>
+<div style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 34px; font-weight: 400; letter-spacing: -0.01em; margin-top: 2px">8 h 10 m <span style="font-size: 15px; font-family: 'Figtree', system-ui, sans-serif; color: #4E6A35; font-weight: 600; letter-spacing: 0">+22%</span></div>
+</div>
+<div role="img" aria-label="Focus minutes per day: Mon 45, Tue 90, Wed 60, Thu 120, Fri 75, Sat 30, Sun 50" style="margin: 14px 16px 0; padding: 14px 14px 10px; background: #EADFCB; border-radius: 18px; display: flex; align-items: flex-end; justify-content: space-between; gap: 8px; height: 168px; box-sizing: border-box">
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; height: 45px; background: #C3D1A3; border-radius: 6px 6px 3px 3px"></div><span style="font-size: 11px; color: #6B5844">M</span></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; height: 90px; background: #C3D1A3; border-radius: 6px 6px 3px 3px"></div><span style="font-size: 11px; color: #6B5844">T</span></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; height: 60px; background: #C3D1A3; border-radius: 6px 6px 3px 3px"></div><span style="font-size: 11px; color: #6B5844">W</span></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; height: 120px; background: #4E6A35; border-radius: 6px 6px 3px 3px"></div><span style="font-size: 11px; color: #3E5429; font-weight: 600">T</span></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; height: 6px; background: #DCCDB2; border-radius: 3px"></div><span style="font-size: 11px; color: #6B5844">F</span></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; height: 6px; background: #DCCDB2; border-radius: 3px"></div><span style="font-size: 11px; color: #6B5844">S</span></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; height: 6px; background: #DCCDB2; border-radius: 3px"></div><span style="font-size: 11px; color: #6B5844">S</span></div>
+</div>
+<div style="padding: 12px 16px 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="background: #FBF8F1; border: 1px solid #E4D9C5; border-radius: 14px; padding: 10px 12px">
+<div style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 22px">6</div>
+<div style="font-size: 11px; color: #6B5844">day streak</div>
+</div>
+<div style="background: #FBF8F1; border: 1px solid #E4D9C5; border-radius: 14px; padding: 10px 12px">
+<div style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 22px">23.5h</div>
+<div style="font-size: 11px; color: #6B5844">this month</div>
+</div>
+<div style="background: #FBF8F1; border: 1px solid #E4D9C5; border-radius: 14px; padding: 10px 12px">
+<div style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 22px">88%</div>
+<div style="font-size: 11px; color: #6B5844">completed</div>
+</div>
+</div>
+<div style="padding: 16px 24px 0">
+<div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B5844; font-weight: 600; margin-bottom: 10px">Most tempting</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 28px; align-items: center; gap: 10px; font-size: 13px"><span>Steam games</span><div style="height: 8px; background: #E4D9C5; border-radius: 4px"><div style="width: 100%; height: 100%; background: #A8825E; border-radius: 4px"></div></div><span style="text-align: right; color: #6B5844">11</span></div>
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 28px; align-items: center; gap: 10px; font-size: 13px"><span>Discord</span><div style="height: 8px; background: #E4D9C5; border-radius: 4px"><div style="width: 36%; height: 100%; background: #A8825E; border-radius: 4px"></div></div><span style="text-align: right; color: #6B5844">4</span></div>
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 28px; align-items: center; gap: 10px; font-size: 13px"><span>Riot Client</span><div style="height: 8px; background: #E4D9C5; border-radius: 4px"><div style="width: 18%; height: 100%; background: #A8825E; border-radius: 4px"></div></div><span style="text-align: right; color: #6B5844">2</span></div>
+</div>
+</div>
+</div>
+</section><section class="screen" id="Blocks" aria-label="Blocks">
+<div style="width: 380px; height: 620px; box-sizing: border-box; background: #F6F0E4; color: #3E3226; font-family: 'Figtree', system-ui, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px 10px 20px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F7F43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"></path><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"></path><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"></path></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 21px; font-weight: 500; letter-spacing: -0.01em">niwa</span>
+</div>
+<div style="display: flex; gap: 2px">
+<button aria-label="Minimize to tray" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"></path></svg></button>
+<button aria-label="Close" style="width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button>
+</div>
+</div>
+<nav aria-label="Sections" style="display: flex; gap: 4px; margin: 0 16px; padding: 4px; background: #EADFCB; border-radius: 14px">
+<a href="#Main" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Focus</a>
+<a href="#Garden" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Garden</a>
+<a href="#Stats" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; color: #6B5844; font-weight: 500; font-size: 13px; text-decoration: none">Stats</a>
+<a href="#Blocks" aria-current="page" style="flex-grow: 1; text-align: center; padding: 10px 0; border-radius: 10px; background: #FBF8F1; color: #3E5429; font-weight: 600; font-size: 13px; text-decoration: none; box-shadow: 0 1px 2px rgba(62,50,38,0.12)">Blocks</a>
+</nav>
+<div style="padding: 16px 24px 0; display: flex; align-items: baseline; justify-content: space-between">
+<h1 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100; font-size: 24px; font-weight: 400">Deep work</h1>
+<button style="border: 0; background: transparent; color: #4E6A35; font-family: inherit; font-size: 13px; font-weight: 600; padding: 12px 0; cursor: pointer">Switch list</button>
+</div>
+<div role="radiogroup" aria-label="Strictness" style="margin: 2px 16px 0; position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border: 1px solid #E0D3BD; border-radius: 12px">
+<div class="mode-thumb" aria-hidden="true" style="position: absolute; top: 4px; left: 4px; width: calc((100% - 12px) / 2); height: 36px; border-radius: 9px; background: #DCE5C4; transform: translateX(0px); transition: transform 0.35s cubic-bezier(0.3, 0.7, 0.2, 1), background-color 0.35s ease"></div>
+<button role="radio" aria-checked="true" class="mode" data-m="gentle" style="position: relative; height: 36px; border: 0; border-radius: 9px; background: transparent; color: #3E5429; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Gentle</button>
+<button role="radio" aria-checked="false" class="mode" data-m="strict" style="position: relative; height: 36px; border: 0; border-radius: 9px; background: transparent; color: #6B5844; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Strict</button>
+</div>
+<div style="padding: 14px 24px 6px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B5844; font-weight: 600">Games</div>
+<div style="margin: 0 16px; background: #FBF8F1; border: 1px solid #E4D9C5; border-radius: 16px; display: flex; flex-direction: column">
+<label style="display: flex; align-items: center; justify-content: space-between; padding: 0 14px; height: 44px; font-size: 14px; border-bottom: 1px solid #EFE6D6; cursor: pointer">All Steam games<input class="tg" type="checkbox" checked></label>
+<label style="display: flex; align-items: center; justify-content: space-between; padding: 0 14px; height: 44px; font-size: 14px; border-bottom: 1px solid #EFE6D6; cursor: pointer">All Epic games<input class="tg" type="checkbox" checked></label>
+<label style="display: flex; align-items: center; justify-content: space-between; padding: 0 14px; height: 44px; font-size: 14px; border-bottom: 1px solid #EFE6D6; cursor: pointer">Riot games<input class="tg" type="checkbox" checked></label>
+<label style="display: flex; align-items: center; justify-content: space-between; padding: 0 14px; height: 44px; font-size: 14px; border-bottom: 1px solid #EFE6D6; cursor: pointer">Battle.net · EA · Ubisoft<input class="tg" type="checkbox"></label>
+<label style="display: flex; align-items: center; justify-content: space-between; padding: 0 14px; height: 44px; font-size: 14px; color: #6B5844; cursor: pointer">Also close launchers<input class="tg" type="checkbox"></label>
+</div>
+<div style="padding: 14px 24px 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B5844; font-weight: 600">Apps</div>
+<div style="padding: 0 16px; display: flex; flex-wrap: wrap; gap: 6px">
+<span style="display: flex; align-items: center; gap: 2px; font-size: 13px; padding: 0 2px 0 12px; height: 34px; border-radius: 999px; background: #EADFCB">Discord<button aria-label="Remove Discord" style="width: 30px; height: 30px; border: 0; background: transparent; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 50%"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button></span>
+<span style="display: flex; align-items: center; gap: 2px; font-size: 13px; padding: 0 2px 0 12px; height: 34px; border-radius: 999px; background: #EADFCB">Spotify<button aria-label="Remove Spotify" style="width: 30px; height: 30px; border: 0; background: transparent; color: #6B5844; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 50%"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button></span>
+<button style="height: 34px; padding: 0 14px; border-radius: 999px; border: 1px dashed #B9A68C; background: transparent; color: #4E6A35; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">+ Add app</button>
+</div>
+<div style="margin: 14px 16px 0; padding: 10px 14px; border-radius: 12px; background: #EFE6D6; font-size: 12px; color: #5A4836; display: flex; justify-content: space-between; align-items: center">
+<span>Always allowed: Wallpaper Engine</span>
+<button style="border: 0; background: transparent; color: #4E6A35; font-family: inherit; font-size: 12px; font-weight: 600; padding: 6px 0; cursor: pointer">Edit</button>
+</div>
+</div>
+</section>
+</div>
+<nav class="dev-nav" aria-label="Mockup screens"><a href="#Start">Plant a seed</a> <a href="#Main">Focus</a> <a href="#Bloomed">Fully grown</a> <a href="#Withered">Withered</a> <a href="#Garden">Garden</a> <a href="#Stats">Stats</a> <a href="#Blocks">Blocks</a></nav>
+<script>
+const screens=[...document.querySelectorAll('.screen')];
+function show(){const id=(location.hash||'#Start').slice(1);const t=screens.find(s=>s.id===id)||screens[0];screens.forEach(s=>s.classList.toggle('active',s===t));document.querySelectorAll('.dev-nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+t.id));}
+addEventListener('hashchange',show);show();
+const ON={border:'#4E6A35',bg:'#FBF8F1',shadow:'0 4px 10px rgba(62,50,38,0.12)',lift:'-2px',name:'#3E5429',req:'#4E6A35'};
+const OFF={border:'#E0D3BD',bg:'#F3EBDC',shadow:'0 0 0 rgba(62,50,38,0)',lift:'0px',name:'#3E3226',req:'#6B5844'};
+const labels=['25 min','50 min','90 min','Custom'];
+document.addEventListener('click',e=>{
+ const d=e.target.closest('.dur');
+ if(d){const i=+d.dataset.i;document.querySelector('.dur-thumb').style.transform=`translateX(calc(${i*100}% + ${i*6}px))`;
+  document.querySelectorAll('.dur').forEach((b,j)=>{const s=j===i;b.setAttribute('aria-checked',s);b.style.borderColor=s?'transparent':'#E0D3BD';b.style.color=s?'#3E5429':'#3E3226';b.style.fontWeight=s?600:400;});
+  document.querySelector('.cta-label').textContent='Plant & start'+(i===3?'':' · '+labels[i]);return;}
+ const s=e.target.closest('.seed');
+ if(s){const i=+s.dataset.i;document.querySelectorAll('.seed').forEach((b,j)=>{const v=j===i?ON:OFF;b.setAttribute('aria-checked',j===i);b.style.borderColor=v.border;b.style.background=v.bg;b.style.boxShadow=v.shadow;b.style.transform=`translateY(${v.lift})`;const sp=b.querySelectorAll(':scope > span');sp[0].style.color=v.name;sp[1].style.color=v.req;});return;}
+ const m=e.target.closest('.mode');
+ if(m){const strict=m.dataset.m==='strict';const th=document.querySelector('.mode-thumb');th.style.transform=strict?'translateX(calc(100% + 4px))':'translateX(0px)';th.style.background=strict?'#EBD6C6':'#DCE5C4';
+  document.querySelectorAll('.mode').forEach(b=>{const g=b.dataset.m==='gentle';const sel=g!==strict;b.setAttribute('aria-checked',sel);b.style.color=sel?(strict?'#7A4A33':'#3E5429'):'#6B5844';});}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+[package]
+name = "niwa-cli"
+description = "Milestone 1 prototype: a command-line focus session that blocks apps and Steam games"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "niwa"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+niwa-blocker = { path = "../niwa-blocker" }

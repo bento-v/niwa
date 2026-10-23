@@ -1,0 +1,9 @@
+/target
+node_modules/
+dist/
+/app/src-tauri/gen/
+*.skill
+/app/src-tauri/binaries/
+
+# Local Claude Code settings
+/.claude/settings.local.json

@@ -1,0 +1,289 @@
+/* Design tokens from SPEC.md, plus the supporting shades the mockup uses. */
+:root {
+  --card: #f6f0e4;
+  --panel: #eadfcb;
+  --text: #3e3226;
+  --muted: #6b5844;
+  --matcha: #4e6a35;
+  --matcha-deep: #3e5429;
+  --matcha-tint: #dce5c4;
+  --clay: #a8825e;
+  --clay-tint: #ebd6c6;
+  --clay-deep: #7a4a33;
+  --surface: #fbf8f1;
+  --tile: #f3ebdc;
+  --line: #e0d3bd;
+  --line-soft: #e4d9c5;
+  --line-strong: #d6c7ad;
+
+  --display: 'Fraunces Variable', Georgia, serif;
+  --body: 'Figtree Variable', system-ui, sans-serif;
+  --ease: cubic-bezier(0.3, 0.7, 0.2, 1);
+  /* Critically damped: a quick start and a long, soft landing with no overshoot. */
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+  /* How far things travel as they arrive. Reduce motion sets it to 0, which
+     leaves every entrance as a plain fade. */
+  --travel: 1;
+
+  color-scheme: light;
+}
+:root[data-motion='reduced'] {
+  --travel: 0;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--body);
+  color: var(--text);
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+/* The window is a little larger than the card so its shadow has room. */
+#app {
+  padding: 18px 18px 28px;
+}
+
+.card {
+  position: relative;
+  /* The card fills its window, less the margin for its shadow. The window
+     can be resized; at its smallest the card is the 380 x 620 it was
+     designed at. In a browser, `?size=520x760` tries other sizes. */
+  width: calc(100vw - 36px);
+  height: calc(100vh - 46px);
+  box-sizing: border-box;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow:
+    0 6px 18px rgba(62, 50, 38, 0.2),
+    0 1px 4px rgba(62, 50, 38, 0.12);
+  display: flex;
+  flex-direction: column;
+  /* The Withered screen pales the card; let that happen slowly. */
+  transition: background-color 0.6s ease;
+}
+
+/* The mini timer's window is just larger than the timer, for its shadow. */
+.mini #app {
+  padding: 8px 8px 16px;
+}
+
+/* In a plain browser, sit the card on the mockup's backdrop. */
+.in-browser body {
+  background: #e7dfd1;
+  overflow: auto;
+}
+.in-browser #app {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+.in-browser .card {
+  width: var(--card-width, 380px);
+  height: var(--card-height, 620px);
+  flex-shrink: 0;
+  box-shadow:
+    0 20px 50px rgba(62, 50, 38, 0.18),
+    0 2px 6px rgba(62, 50, 38, 0.1);
+}
+
+h1,
+p {
+  margin: 0;
+}
+h1 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+.display {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 100;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Screens fade up as they arrive, drifting in from the side of the tab you
+   moved toward (--enter-x is set on the card when the tab changes). */
+.screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  animation: screen-in 0.38s var(--ease-settle);
+}
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translate(calc(var(--enter-x, 0px) * var(--travel)), calc(4px * var(--travel)));
+  }
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+button,
+a {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s var(--ease),
+    filter 0.2s ease;
+}
+button:not(:disabled):not([aria-disabled='true']):hover {
+  filter: brightness(0.97);
+}
+/* The press lands at once; only the release eases back. */
+button:not(:disabled):not([aria-disabled='true']):active {
+  transform: scale(0.97);
+  transition-duration: 0.05s;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--matcha);
+  outline-offset: 2px;
+}
+
+.btn {
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--muted);
+}
+.btn.primary {
+  border-color: transparent;
+  background: var(--matcha);
+  color: var(--card);
+  font-weight: 600;
+}
+.btn.danger {
+  border-color: transparent;
+  background: var(--clay-deep);
+  color: var(--card);
+  font-weight: 600;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--matcha);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 0;
+}
+
+.chip {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.chip.green {
+  background: var(--matcha-tint);
+  color: var(--matcha-deep);
+}
+
+/* The on/off switch from the mockup. The knob glides on the compositor and
+   stretches toward its far side while pressed, anywhere on its row. */
+.toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 24px;
+  border-radius: 12px;
+  background: #d9ccb5;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--surface);
+  box-shadow:
+    0 1px 2px rgba(62, 50, 38, 0.25),
+    0 2px 6px rgba(62, 50, 38, 0.08);
+  transition:
+    transform 0.34s var(--ease-settle),
+    width 0.2s var(--ease-settle);
+}
+.toggle:checked {
+  background: #5f7f43;
+}
+.toggle:checked::after {
+  transform: translateX(16px);
+}
+.toggle:not(:disabled):active::after,
+label:active .toggle:not(:disabled)::after {
+  width: 22px;
+}
+.toggle:checked:not(:disabled):active::after,
+label:active .toggle:checked:not(:disabled)::after {
+  transform: translateX(12px);
+}
+.toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* Settings > Reduce motion (lib/motion.svelte.ts). Entrances become fades
+   through --travel; controls still show their state changing in place. */
+:root[data-motion='reduced'] * {
+  scroll-behavior: auto !important;
+}
